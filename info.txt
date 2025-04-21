@@ -1,4 +1,5 @@
 
+// npx convex dev 
 
 Hello, {{ full_name }}! I hope you're doing well. Today, I'm here to help you build a personalized diet and weekly gym workout plan that fits your lifestyle. I'll need to gather some details from you to create something that's truly effective. Are you ready to get started?
 
@@ -7,6 +8,7 @@ Thank you for sharing this information! I'm creating your personalized fitness a
 
 
 https://example.com/vapi/generate-program 
+
 
 
 
@@ -25,4 +27,4 @@ workout_days : Numbers of days per week available for exercise
 
 fitness_level : Customer fitness experience (begginer,intermediate,advanced)
 
-dietetary_restricton : Food allergies or dietary preferences to consider
+dietary_restrictions : Food allergies or dietary preferences to consider    
