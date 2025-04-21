@@ -90,7 +90,6 @@ http.route({
   }),
 });
 
-// validate and fix workout plan to ensure it has proper numeric types
 function validateWorkoutPlan(plan: any) {
   const validatedPlan = {
     schedule: plan.schedule,
@@ -106,9 +105,7 @@ function validateWorkoutPlan(plan: any) {
   return validatedPlan;
 }
 
-// validate diet plan to ensure it strictly follows schema
 function validateDietPlan(plan: any) {
-  // only keep the fields we want
   const validatedPlan = {
     dailyCalories: plan.dailyCalories,
     meals: plan.meals.map((meal: any) => ({
@@ -143,7 +140,7 @@ http.route({
       const model = genAI.getGenerativeModel({
         model: "gemini-2.0-flash-001",
         generationConfig: {
-          temperature: 0.4, // lower temperature for more predictable outputs
+          temperature: 0.4,
           topP: 0.9,
           responseMimeType: "application/json",
         },
@@ -195,7 +192,6 @@ http.route({
       const workoutResult = await model.generateContent(workoutPrompt);
       const workoutPlanText = workoutResult.response.text();
 
-      // VALIDATE THE INPUT COMING FROM AI
       let workoutPlan = JSON.parse(workoutPlanText);
       workoutPlan = validateWorkoutPlan(workoutPlan);
 
@@ -239,11 +235,9 @@ http.route({
       const dietResult = await model.generateContent(dietPrompt);
       const dietPlanText = dietResult.response.text();
 
-      // VALIDATE THE INPUT COMING FROM AI
       let dietPlan = JSON.parse(dietPlanText);
       dietPlan = validateDietPlan(dietPlan);
 
-      // save to our DB: CONVEX
       const planId = await ctx.runMutation(api.plans.createPlan, {
         userId: user_id,
         dietPlan,

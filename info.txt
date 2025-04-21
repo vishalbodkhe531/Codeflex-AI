@@ -1,0 +1,28 @@
+
+
+Hello, {{ full_name }}! I hope you're doing well. Today, I'm here to help you build a personalized diet and weekly gym workout plan that fits your lifestyle. I'll need to gather some details from you to create something that's truly effective. Are you ready to get started?
+
+Thank you for sharing this information! I'm creating your personalized fitness and nutrition plan right now. You'll be redirected to your profile screen – just refresh the page in a few seconds to view your complete program. We hope that this program will help you to reach your goals. Have a good day!
+
+
+
+https://example.com/vapi/generate-program 
+
+
+
+
+age : Customer's age for appropriate exercise intensity
+
+weight : Customer's weaight for BMI calculation
+
+height : Customer's height for BMI calculation
+
+injuries : Any existing injuries or health conditions to consider
+
+fitness_goal : Primary fitness objective (weight loss,muscle gain,etc.) 
+
+workout_days : Numbers of days per week available for exercise
+
+fitness_level : Customer fitness experience (begginer,intermediate,advanced)
+
+dietetary_restricton : Food allergies or dietary preferences to consider
