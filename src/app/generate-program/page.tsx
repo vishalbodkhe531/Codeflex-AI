@@ -82,6 +82,7 @@ const GenerateProgramPage = () => {
       console.log("AI stopped Speaking");
       setIsSpeaking(false);
     };
+    
     const handleMessage = (message: any) => {
       if (message.type === "transcript" && message.transcriptType === "final") {
         const newMessage = { content: message.transcript, role: message.role };
